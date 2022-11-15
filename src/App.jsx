@@ -36,7 +36,7 @@ function App() {
             {data &&
                 <Page jsonData={data} />
             }
-            <div id="resume-container">ddd</div>
+            {/* <div id="resume-container">ddd</div> */}
         </>
     )
 }

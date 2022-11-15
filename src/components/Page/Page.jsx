@@ -83,9 +83,9 @@ return (
             </div>
         </main>
 
-        <div id="footer">
+        {/* <div id="footer">
             <p>{data.firstName + " " + data.lastName} &mdash; <a href="mailto:name@yourdomain.com">{data.email}</a> &mdash; (250) 790 888 345</p>
-        </div>
+        </div> */}
 
     </div>
 )

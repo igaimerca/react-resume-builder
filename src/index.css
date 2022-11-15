@@ -20,11 +20,13 @@ body {
 
 *[contenteditable="true"]:focus {
   background-color: #e5e5e5;
-
-  border-radius: 15px;
+  border-radius: 5px;
   outline: none;
 }
 
+h1,h2,h3,p,a {
+  padding: 2px 4px;
+}
 .msg {
   padding: 10px;
   background: #222;
@@ -199,12 +201,12 @@ p.enlarge span {
   margin-bottom: 1em;
   padding-bottom: 1em;
   box-sizing: content-box;
+  padding: 2px;
+  border: 2px dashed transparent;
 }
 
 .job:hover {
-  border: 2px dashed #ccc;
-  padding: 1px;
-
+    border: 2px dashed #ccc;
 }
 
 .position,
