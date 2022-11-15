@@ -1,12 +1,13 @@
+import Page from "./components/Page/Page"
+
 function App() {
 
-
-  return (
-    <div className="resume-container">
-        React + Vite
-    </div>
-  )
+    return (
+            <>
+            {/* <Page /> */}
+            <Page />
+            </>
+    )
 }
 
 export default App
-        
