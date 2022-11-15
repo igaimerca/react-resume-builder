@@ -22,21 +22,5 @@
       "start-date": "01-12-2020",
       "end-date": "01-12-2022"
     }
-  ],
-  "education": [
-    {
-      "institution": "Stanford University",
-      "degree": "Bachelors",
-      "field": "Computer Science",
-      "start-date": "01-12-2000",
-      "end-date": "01-12-2004"
-    },
-    {
-      "institution": "Stanford University",
-      "degree": "Masters",
-      "field": "Computer Science",
-      "start-date": "01-12-2004",
-      "end-date": "01-12-2006"
-    }
   ]
 }
