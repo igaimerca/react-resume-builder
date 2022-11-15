@@ -1,20 +1,28 @@
 function Page({ jsonData }) {
-    console.log(jsonData);
-    if (!jsonData) return <p>No jsonData found!</p>
+    if (!jsonData) return <h1>No data fetched! </h1>
+    const handleChange = (e) => {
+        let value = e.target.innerHTML;
+        let name = e.target.name;
+
+        console.log(value, name);
+    }
     return (
         <div id="resume-container">
             <header id="header">
                 <div>
                     <div className="title">
-                        <h1 contenteditable="true">{jsonData.firstName + " " + jsonData.lastName}</h1>
-                        <h3 contenteditable="true">{jsonData.position}</h3>
+                        <div className="names">
+                        <h1 contentEditable suppressContentEditableWarning>{jsonData.firstName}</h1>
+                        <h1 contentEditable suppressContentEditableWarning>{jsonData.lastName}</h1>
+                        </div>
+                        <h3 contentEditable suppressContentEditableWarning>{jsonData.position}</h3>
                     </div>
 
                     <div>
                         <div className="contact-info">
                             {jsonData.social_links?.map((social, i) => (
-                            <p contenteditable="true" key={i}>
-                                <b>{social.title}: </b><a href={social.link}>{social.link}</a></p>
+                                <p contentEditable suppressContentEditableWarning key={i}>
+                                    <b>{social.title}: </b><a href={social.link}>{social.link}</a></p>
                             ))}
                         </div>
                     </div>
@@ -22,15 +30,14 @@ function Page({ jsonData }) {
             </header>
 
             <main id="main-container">
-                <div>{jsonData.firstName + " " + jsonData.lastName}
+                <div>
                     <div>
-
                         <div>
                             <div className="title">
                                 <h2>Objective</h2>
                             </div>
                             <div>
-                                <p className="enlarge">
+                                <p className="enlarge" contentEditable suppressHydrationWarning onInput={handleChange}>
                                     {jsonData.objective}
                                 </p>
                             </div>
@@ -43,12 +50,12 @@ function Page({ jsonData }) {
                             <div>
                                 {jsonData.experience.map((exp, index) => (
                                     <div className="job last" key={index}>
-                                        <h3 className='company'>{exp.company}</h3>
+                                        <h3 className='company' contentEditable suppressHydrationWarning onInput={handleChange}>{exp.company}</h3>
                                         <div className="job-desc">
-                                            <p className='position'>{exp.position}</p>
-                                            <p className='timeline'>{exp.startDate} &mdash; {exp.endDate}</p>
+                                            <p className='position' contentEditable suppressHydrationWarning onInput={handleChange}>{exp.position}</p>
+                                            <p className='timeline' contentEditable suppressHydrationWarning onInput={handleChange}>{exp.startDate} &mdash; {exp.endDate}</p>
                                         </div>
-                                        <p>{exp.description} </p>
+                                        <p contentEditable suppressHydrationWarning onInput={handleChange}>{exp.description} </p>
                                     </div>
                                 ))}
                             </div>

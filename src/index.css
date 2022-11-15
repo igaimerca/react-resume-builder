@@ -43,7 +43,7 @@ body {
   
 
   #resume-container {
-    padding: 1.3cm, 
+    padding: 1.3cm;
     display: block;
     background: #fff;
     box-shadow: rgba(0,0,0,.2) .2rem .2rem 3rem .2rem;
@@ -56,9 +56,15 @@ body {
     word-break: break-word;
     page-break-after: always;
     line-height: normal;
-    padding: 10px 80px; */
+    padding: 10px 80px; 
   }
-  
+  .names{
+    display: flex;
+    flex-wrap:wrap;
+  }
+  .names h1:last-child{
+    padding: 0 15px;
+  }
   /* //-- header, body, footer -- */
   #header {
     margin: 2.5em 0 3em 0;

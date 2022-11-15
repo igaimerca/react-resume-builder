@@ -2,11 +2,11 @@ import { useState, useEffect } from "react"
 import Page from "./components/Page/Page"
 
 function App() {
-    const [data, setData] = useState({})
+    const [data, setData] = useState()
     const [data2, setData2] = useState({})
 
-    const getData = () => {
-        fetch('resume.json'
+    const getData = async () => {
+        await fetch('resume.json'
             , {
                 headers: {
                     'Content-Type': 'application/json',
@@ -33,7 +33,10 @@ function App() {
 
     return (
         <>
-            <Page jsonData={data} />
+            {data &&
+                <Page jsonData={data} />
+            }
+
         </>
     )
 }
