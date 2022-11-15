@@ -1,0 +1,38 @@
+:root {
+  font-family: Roboto, Merriweather, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+.resume-container {
+    padding: 1.3cm, 
+    display: block;
+    background: #fff;
+    box-shadow: rgba(0,0,0,.2) .2rem .2rem 3rem .2rem;
+    min-width: 21cm;
+    max-width: 21cm;
+    min-height: 29.7cm;
+    max-height: 29.7cm;
+    margin: auto;
+    margin-left: 0;
+    margin-right: 0;
+    box-sizing: border-box;
+    margin-bottom: 1cm;
+    word-break: break-word;
+    page-break-after: always;
+    line-height: normal;
+}
