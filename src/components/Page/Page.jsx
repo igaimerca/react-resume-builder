@@ -8,18 +8,16 @@ function Page({ jsonData }) {
             <header id="header">
                 <div>
                     <div className="title">
-                        <h1></h1>
+                        <h1>{data.firstName + " " + data.lastName}</h1>
                         <h3>{data.position}</h3>
                     </div>
 
                     <div>
                         <div className="contact-info">
-                            <p>
-                                <b>Email: </b><a href="mailto:name@yourdomain.com">{data.email}</a></p>
-                            <p><b>Phone: </b> <a href="tel:+123-456-7890">{data.tel}</a> </p>
-                            <p><b>Twitter: </b> <a href="https://twitter.com/elonmusk">{data.social_links.facebook}</a> </p> <p><b>Facebook: </b> <a href="https://twitter.com/elonmusk">{data.social_links.twitter}</a> </p>
-                            <p><b>LinkedIn: </b> <a href="https://linkedin.com/in/elonmusk">{data.social_links.linkedin}</a> </p>
-
+                            {data.social_links?.map((social, i) => (
+                            <p key={i}>
+                                <b>{social.title}: </b><a href={social.link}>{social.link}</a></p>
+                            ))}
                         </div>
                     </div>
                 </div>
@@ -46,7 +44,7 @@ function Page({ jsonData }) {
 
                             <div>
                                 {data.experience.map((exp, index) => (
-                                    <div className="job last">
+                                    <div className="job last" key={index}>
                                         <h3 className='company'>{exp.company}</h3>
                                         <div className="job-desc">
                                             <p className='position'>{exp.position}</p>
