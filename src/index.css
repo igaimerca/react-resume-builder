@@ -16,6 +16,12 @@ body {
     align-items: center;
     justify-content: center;
 }
+*[contenteditable="true"]:focus {
+    background-color: #e5e5e5;
+
+    border-radius: 15px;
+    outline: none;
+  }
 .msg {
     padding: 10px;
     background: #222;
@@ -142,7 +148,7 @@ body {
     justify-content: space-between
   }
   .contact-info a {
-    width: 80%;
+    width: 60%;
   }
   .title h2 {
     font-style: italic;

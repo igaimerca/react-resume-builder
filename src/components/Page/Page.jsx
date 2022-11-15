@@ -1,21 +1,18 @@
-import { useState } from "react";
-
 function Page({ jsonData }) {
-    const [data, setData] = useState(jsonData);
-    if (!data) return <p>No data found!</p>
+    if (!jsonData.length) return <p>No jsonData found!</p>
     return (
         <div id="resume-container">
             <header id="header">
                 <div>
                     <div className="title">
-                        <h1>{data.firstName + " " + data.lastName}</h1>
-                        <h3>{data.position}</h3>
+                        <h1 contenteditable="true">{jsonData.firstName + " " + jsonData.lastName}</h1>
+                        <h3 contenteditable="true">{jsonData.position}</h3>
                     </div>
 
                     <div>
                         <div className="contact-info">
-                            {data.social_links?.map((social, i) => (
-                            <p key={i}>
+                            {jsonData.social_links?.map((social, i) => (
+                            <p contenteditable="true" key={i}>
                                 <b>{social.title}: </b><a href={social.link}>{social.link}</a></p>
                             ))}
                         </div>
@@ -24,7 +21,7 @@ function Page({ jsonData }) {
             </header>
 
             <main id="main-container">
-                <div>{data.firstName + " " + data.lastName}
+                <div>{jsonData.firstName + " " + jsonData.lastName}
                     <div>
 
                         <div>
@@ -33,7 +30,7 @@ function Page({ jsonData }) {
                             </div>
                             <div>
                                 <p className="enlarge">
-                                    {data.objective}
+                                    {jsonData.objective}
                                 </p>
                             </div>
                         </div>
@@ -43,7 +40,7 @@ function Page({ jsonData }) {
                             </div>
 
                             <div>
-                                {data.experience.map((exp, index) => (
+                                {jsonData.experience.map((exp, index) => (
                                     <div className="job last" key={index}>
                                         <h3 className='company'>{exp.company}</h3>
                                         <div className="job-desc">
@@ -61,7 +58,7 @@ function Page({ jsonData }) {
             </main>
 
             <div id="footer">
-                <p>{data.firstName + " " + data.lastName} &mdash; <a href="mailto:name@yourdomain.com">{data.email}</a> &mdash; (250) 790 888 345</p>
+                <p>{jsonData.firstName + " " + jsonData.lastName} &mdash; <a href="mailto:name@yourdomain.com">{jsonData.email}</a> &mdash; (250) 790 888 345</p>
             </div>
 
         </div>
