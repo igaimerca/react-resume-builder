@@ -3,9 +3,9 @@ import Page from "./components/Page/Page"
 
 function App() {
     const [data, setData] = useState({})
+    const [data2, setData2] = useState({})
 
     const getData = () => {
-        console.log("yyy");
         fetch('resume.json'
             , {
                 headers: {
@@ -28,7 +28,7 @@ function App() {
 
     useEffect(() => {
         getData();
-    }, [data])
+    }, [data2])
 
 
     return (

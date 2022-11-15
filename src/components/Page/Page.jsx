@@ -1,5 +1,6 @@
 function Page({ jsonData }) {
-    if (!jsonData.length) return <p>No jsonData found!</p>
+    console.log(jsonData);
+    if (!jsonData) return <p>No jsonData found!</p>
     return (
         <div id="resume-container">
             <header id="header">
