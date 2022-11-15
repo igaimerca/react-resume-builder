@@ -7,88 +7,110 @@ function Page({ jsonData }) {
         let value = e.target.innerHTML;
         let name = e.target.name;
 
-        console.log(value, name);
+        console.log(isOverflown(el));
+        if (isOverflown(el)==true) {
+            let newPage = document.createElement('div')
+            newPage.setAttribute('class', 'resume-container')
+            main.appendChild(newPage)
+        }
     }
 
     const removeJob = () => {
 
     }
     const addJob = () => {
-       
+
     }
 
-return (
-    <div id="resume-container">
-        <header id="header">
-            <div>
-                <div className="title">
-                    <div className="names">
-                        <h1 contentEditable suppressContentEditableWarning>{data.firstName}</h1>
-                        <h1 contentEditable suppressContentEditableWarning>{data.lastName}</h1>
-                    </div>
-                    <h3 contentEditable suppressContentEditableWarning>{data.position}</h3>
-                </div>
+    function isOverflown(element) {
+        return element.scrollHeight > element.clientHeight || element.scrollWidth > element.clientWidth
+    }
 
-                <div>
-                    <div className="contact-info">
-                        {data.social_links?.map((social, i) => (
-                            <p key={i}>
-                                <b>{social.title}: </b><a contentEditable suppressContentEditableWarning href={social.link}>{social.link}</a></p>
-                        ))}
-                    </div>
-                </div>
-            </div>
-        </header>
+    var els = document.getElementsByClassName('resume-container');
+    var main = document.getElementById('main-container')
+    for (var i = 0; i < els.length; i++) {
+        var el = els[i];
+        el.style.borderColor = (isOverflown(el) ? 'red' : 'green');
+        if (isOverflown(el)) {
 
-        <main id="main-container">
-            <div>
-                <div>
+
+            let newPage = document.createElement('div')
+            newPage.setAttribute('class', 'resume-container')
+            main.appendChild(newPage)
+
+        }
+        console.log("Element #" + i + " is " + (isOverflown(el) ? '' : 'not ') + "overflown.");
+    }
+
+    return (
+        <div id="main-container">
+            <div className="resume-container">
+                <header id="header">
                     <div>
                         <div className="title">
-                            <h2>Objective</h2>
+                            <div className="names">
+                                <h1 contentEditable suppressContentEditableWarning>{data.firstName}</h1>
+                                <h1 contentEditable suppressContentEditableWarning>{data.lastName}</h1>
+                            </div>
+                            <h3 contentEditable suppressContentEditableWarning>{data.position}</h3>
                         </div>
                         <div>
-                            <p className="enlarge" contentEditable suppressContentEditableWarning onInput={handleChange}>
-                                {data.objective}
-                            </p>
+                            <div className="contact-info">
+                                {data.social_links?.map((social, i) => (
+                                    <p key={i}>
+                                        <b>{social.title}: </b><a contentEditable suppressContentEditableWarning href={social.link}>{social.link}</a></p>
+                                ))}
+                            </div>
                         </div>
                     </div>
+                </header>
+
+                <main id="main-container2">
                     <div>
-                        <div className="title">
-                            <h2>Experience</h2>
-                        </div>
-
                         <div>
-                            {data.experience.map((exp, index) => (
-                                <div className="job" key={index}>
-                                    <ul className="add-remove">
-                                        <li className="remove" onClick={removeJob}>
-                                            -
-                                        </li>
-                                        {index == data.experience.length - 1 ? <li className="add" onClick={addJob}>+</li> : ""}
-
-                                    </ul>
-                                    <h3 className='company' contentEditable suppressContentEditableWarning onInput={handleChange}>{exp.company}</h3>
-                                    <div className="job-desc">
-                                        <p className='position' contentEditable suppressContentEditableWarning onInput={handleChange}>{exp.position}</p>
-                                        <p className='timeline' contentEditable suppressContentEditableWarning onInput={handleChange}>{exp.startDate} &mdash; {exp.endDate}</p>
-                                    </div>
-                                    <p contentEditable suppressContentEditableWarning onInput={handleChange}>{exp.description} </p>
+                            <div>
+                                <div className="title">
+                                    <h2>Profession summary</h2>
                                 </div>
-                            ))}
+                                <div>
+                                    <p className="enlarge" contentEditable suppressContentEditableWarning onInput={handleChange}>
+                                        {data.objective}
+                                    </p>
+                                </div>
+                            </div>
+                            <div>
+                                <div className="title">
+                                    <h2>Experience</h2>
+                                </div>
+
+                                <div>
+                                    {data.experience.map((exp, index) => (
+                                        <div className="job" key={index}>
+                                            <ul className="add-remove">
+                                                <li className="remove" onClick={removeJob}>
+                                                    -
+                                                </li>
+                                                {index == data.experience.length - 1 ? <li className="add" onClick={addJob}>+</li> : ""}
+
+                                            </ul>
+                                            <h3 className='company' contentEditable suppressContentEditableWarning onInput={handleChange}>{exp.company}</h3>
+                                            <div className="job-desc">
+                                                <p className='position' contentEditable suppressContentEditableWarning onInput={handleChange}>{exp.position}</p>
+                                                <p className='timeline' contentEditable suppressContentEditableWarning onInput={handleChange}>{exp.startDate} &mdash; {exp.endDate}</p>
+                                            </div>
+                                            <p contentEditable suppressContentEditableWarning onInput={handleChange}>{exp.description} </p>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+
                         </div>
                     </div>
-
-                </div>
+                </main>
+<hr />
             </div>
-        </main>
-
-        {/* <div id="footer">
-            <p>{data.firstName + " " + data.lastName} &mdash; <a href="mailto:name@yourdomain.com">{data.email}</a> &mdash; (250) 790 888 345</p>
-        </div> */}
-
-    </div>
-)
+        </div>
+    )
 }
 
 export default Page

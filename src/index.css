@@ -49,8 +49,7 @@ h1,h2,h3,p,a {
   background: #266400;
 }
 
-
-#resume-container {
+.resume-container {
   padding: 1.3cm;
   display: block;
   background: #fff;
@@ -59,12 +58,9 @@ h1,h2,h3,p,a {
   max-width: 21cm;
   min-height: 29.7cm;
   max-height: 29.7cm;
-  box-sizing: border-box;
-  margin-bottom: 1cm;
-  word-break: break-word;
-  page-break-after: always;
   line-height: normal;
-  padding: 10px 80px;
+  padding: 10px 1cm;
+  margin-bottom: 1cm;
 }
 
 .names {
