@@ -1,11 +1,11 @@
 import Page from "./components/Page/Page"
+import jsonData from "./assets/resume.json"
 
 function App() {
 
     return (
             <>
-            {/* <Page /> */}
-            <Page />
+            <Page jsonData={jsonData} />
             </>
     )
 }

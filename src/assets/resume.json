@@ -2,6 +2,9 @@
   "firstName": "John",
   "lastName": "Smith",
   "email": "john@gmail.com",
+  "tel": "(250) 790 888 345",
+  "position": "Software Engineer",  
+  "objective": "I'm an experienced software engineer who constantly seeks out innovative solutions to everyday problems. The last 7+ years, I've honed my analytical thinking and collaboration skills, and I love working with a team. I've also had the opportunity to serve as the software engineer lead for three projects with First Technology.",
   "social_links": {
     "twitter": "https://twitter.com/elonmusk",
     "facebook": "https://facebook.com/elonmusk",
@@ -12,15 +15,15 @@
       "company": "Tesla",
       "position": "CEO",
       "description": "Tesla is an American electric vehicle and clean energy company based in Palo Alto, California.",
-      "start-date": "01-12-2012",
-      "end-date": "01-12-2018"
+      "startDate": "2012",
+      "endDate": "2018"
     },
     {
       "company": "SpaceX",
       "position": "Software Engineer",
       "description": "SpaceX designs, manufactures and launches advanced rockets and spacecraft.",
-      "start-date": "01-12-2020",
-      "end-date": "01-12-2022"
+      "startDate": "2020",
+      "endDate": "2022"
     }
   ]
 }
