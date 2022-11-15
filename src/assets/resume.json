@@ -1,0 +1,42 @@
+{
+  "firstName": "John",
+  "lastName": "Smith",
+  "email": "john@gmail.com",
+  "social_links": {
+    "twitter": "https://twitter.com/elonmusk",
+    "facebook": "https://facebook.com/elonmusk",
+    "linkedin": "https://linkedin.com/in/elonmusk"
+  },
+  "experience": [
+    {
+      "company": "Tesla",
+      "position": "CEO",
+      "description": "Tesla is an American electric vehicle and clean energy company based in Palo Alto, California.",
+      "start-date": "01-12-2012",
+      "end-date": "01-12-2018"
+    },
+    {
+      "company": "SpaceX",
+      "position": "Software Engineer",
+      "description": "SpaceX designs, manufactures and launches advanced rockets and spacecraft.",
+      "start-date": "01-12-2020",
+      "end-date": "01-12-2022"
+    }
+  ],
+  "education": [
+    {
+      "institution": "Stanford University",
+      "degree": "Bachelors",
+      "field": "Computer Science",
+      "start-date": "01-12-2000",
+      "end-date": "01-12-2004"
+    },
+    {
+      "institution": "Stanford University",
+      "degree": "Masters",
+      "field": "Computer Science",
+      "start-date": "01-12-2004",
+      "end-date": "01-12-2006"
+    }
+  ]
+}
