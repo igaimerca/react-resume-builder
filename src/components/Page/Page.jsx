@@ -8,7 +8,7 @@ function Page({ jsonData }) {
             <header id="header">
                 <div>
                     <div className="title">
-                        <h1>{data.firstName + " " + data.lastName}</h1>
+                        <h1></h1>
                         <h3>{data.position}</h3>
                     </div>
 
@@ -26,7 +26,7 @@ function Page({ jsonData }) {
             </header>
 
             <main id="main-container">
-                <div>
+                <div>{data.firstName + " " + data.lastName}
                     <div>
 
                         <div>
@@ -63,7 +63,7 @@ function Page({ jsonData }) {
             </main>
 
             <div id="footer">
-                <p>John Doe &mdash; <a href="mailto:name@yourdomain.com">john@gmail.com</a> &mdash; (250) 790 888 345</p>
+                <p>{data.firstName + " " + data.lastName} &mdash; <a href="mailto:name@yourdomain.com">{data.email}</a> &mdash; (250) 790 888 345</p>
             </div>
 
         </div>
