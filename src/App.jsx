@@ -4,6 +4,11 @@ import Page from "./components/Page/Page"
 function App() {
     const [data, setData] = useState()
     const [data2, setData2] = useState({})
+    useEffect(() => {
+        if (data) {
+            console.log("ddd", document.querySelector('.add-remove'));
+        }
+    }, [data])
 
     const getData = async () => {
         await fetch('resume.json'
@@ -33,10 +38,16 @@ function App() {
 
     return (
         <>
-            {data &&
-                <Page jsonData={data} />
+            {data && (
+                <>
+                    <Page jsonData={data} />
+                </>
+            )
             }
-            {/* <div id="resume-container">ddd</div> */}
+            <div id="main-container">
+                <div className="resume-container">
+                </div>
+            </div>
         </>
     )
 }
