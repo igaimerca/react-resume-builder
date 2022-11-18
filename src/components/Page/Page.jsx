@@ -18,7 +18,7 @@ function Page({ jsonData }) {
         setData({...data, experience: data?.experience.filter((exp) => exp.id !== expId)})
     }
     const addJob = (expId) => {
-        setData({...data, experience: [...data?.experience, {id: expId + 1, company: 'Company X', position: 'Position...', startDate: '20xx', endDate: '2xxx', description: 'What did you do there?'}]})
+        setData({...data, experience: [...data?.experience, {id: expId + 1, company: 'Company name', position: 'Job title...', startDate: '2xxx', endDate: '2xxx', description: 'Job description?'}]})
     }
 
     function isOverflown(element) {

@@ -44,10 +44,10 @@ function App() {
                 </>
             )
             }
-            <div id="main-container">
+            {/* <div id="main-container">
                 <div className="resume-container">
                 </div>
-            </div>
+            </div> */}
         </>
     )
 }
